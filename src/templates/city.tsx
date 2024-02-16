@@ -42,7 +42,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.photoGallery",
     ],
     localization: {
-      locales: ["en"],
+      locales: ["en", "es"],
     },
   },
 };

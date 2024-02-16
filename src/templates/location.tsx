@@ -44,7 +44,7 @@ export const config: TemplateConfig = {
       "dm_directoryParents.c_addressRegionDisplayName",
     ],
     localization: {
-      locales: ["en"],
+      locales: ["en", "es"],
     },
     transform: {
       replaceOptionValuesWithDisplayNames: ["paymentOptions"],

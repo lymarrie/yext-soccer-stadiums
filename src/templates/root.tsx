@@ -32,7 +32,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.dm_childEntityIds",
     ],
     localization: {
-      locales: ["en"],
+      locales: ["en", "es"],
     },
   },
 };
