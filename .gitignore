@@ -6,7 +6,6 @@ dist/
 .yextrc
 .artifact-output
 !.env.local
-.env
 sites-config/features.json
 functions/functionMetadata.json
 *.local
