@@ -25,6 +25,7 @@ export const config: TemplateConfig = {
       "meta",
       "name",
       "slug",
+      "dm_directoryChildren.meta",
       "dm_directoryChildren.name",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.c_addressRegionDisplayName",

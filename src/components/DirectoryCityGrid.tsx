@@ -41,11 +41,17 @@ const DirectoryCityGrid = ({
           </Link>
         </h2>
         <div className="m-1 border"></div>
-        <Address address={child.address}></Address>
-        <div className="space-x-3">
-          <span>&#128222;</span>
-          <span>{formatPhoneNumber(child.mainPhone)}</span>
+        <div className="space-y-4">
+          <div>
+            <Address address={child.address}></Address>
+            <div className="space-x-3">
+              <span>&#128222;</span>
+              <span>{formatPhoneNumber(child.mainPhone)}</span>
+            </div>
+          </div>
+          <img src={child.photoGallery[0].image.url} className="rounded-md shadow-md"></img>
         </div>
+        
       </div>
     ));
   }
@@ -59,7 +65,7 @@ const DirectoryCityGrid = ({
           {description && <p className="text-2xl text-center">{description}</p>}
         </div>
         {directoryChildren && (
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="space-y-12">
             {childrenDivs}
           </div>
         )}

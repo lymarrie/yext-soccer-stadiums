@@ -13,7 +13,13 @@ const sortChildrenByName = (
   a: DirectoryChild | DirectoryParent,
   b: DirectoryChild | DirectoryParent
 ) => {
-  return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+  // First, compare by meta.entityType.id
+  if (a.meta.entityType.id !== b.meta.entityType.id) {
+    return a.meta.entityType.id < b.meta.entityType.id ? -1 : 1;
+  } else {
+    // If meta.entityType.id values are equal, compare by name
+    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+  }
 };
 
 const DirectoryRootGrid = ({
@@ -32,7 +38,7 @@ const DirectoryRootGrid = ({
         {child.c_addressRegionDisplayName
           ? child.c_addressRegionDisplayName
           : child.name}{" "}
-        ({child.dm_childEntityIds?.length || 0})
+        ({child.dm_childEntityIds?.length || 0}) - <span className="italic font-normal">{child.meta.entityType.id === "ce_city" ? "City" : child.meta.entityType.id === "ce_state" ? "State/Province" : child.meta.entityType.id}</span>
       </Link>
     </div>
   ));

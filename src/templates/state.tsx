@@ -30,9 +30,9 @@ export const config: TemplateConfig = {
       "description",
       "slug",
       "c_addressRegionDisplayName",
-      "dm_directoryParents.name",
-      "dm_directoryParents.slug",
-      "dm_directoryParents.meta",
+      "dm_directoryParents_soccer_stadiums_full.name",
+      "dm_directoryParents_soccer_stadiums_full.slug",
+      "dm_directoryParents_soccer_stadiums_full.meta",
       "dm_directoryChildren.name",
       "dm_directoryChildren.slug",
       "dm_directoryChildren.dm_childEntityIds",
@@ -70,15 +70,15 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 export const transformProps: TransformProps<any> = async (data) => {
-  const { dm_directoryParents, name } = data.document;
+  const { dm_directoryParents_soccer_stadiums_full, name } = data.document;
 
-  (dm_directoryParents || []).push({ name: name, slug: "" });
+  (dm_directoryParents_soccer_stadiums_full || []).push({ name: name, slug: "" });
 
   return {
     ...data,
     document: {
       ...data.document,
-      dm_directoryParents: dm_directoryParents,
+      dm_directoryParents_soccer_stadiums_full: dm_directoryParents_soccer_stadiums_full,
     },
   };
 };
@@ -92,7 +92,7 @@ const State: Template<TemplateRenderProps> = ({
     name,
     description,
     c_addressRegionDisplayName,
-    dm_directoryParents,
+    dm_directoryParents_soccer_stadiums_full,
     dm_directoryChildren,
   } = document;
 
@@ -102,7 +102,7 @@ const State: Template<TemplateRenderProps> = ({
         <Banner />
         <div className="centered-container">
           <Breadcrumbs
-            breadcrumbs={dm_directoryParents}
+            breadcrumbs={dm_directoryParents_soccer_stadiums_full}
             baseUrl={relativePrefixToRoot}
           />
           <DirectoryStateGrid
